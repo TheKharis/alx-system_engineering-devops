@@ -1,21 +1,17 @@
 #!/usr/bin/env bash
-# Loops from 1 to 10 and displays:
-#   "bad luck" for the 4th iteration
-#   "good luck" for the 8th iteration
-#   "Holberton School" for all other iterations
+# This script prints a set of str accrding to the iteration number using only while_if_elif_else loops
 
-count=0
-
-while [ $count -lt 10 ]
+str_count=1
+while [ $str_count -le 10 ]
 do
-  if [ $count -eq 3 ]
-  then
-    echo "bad luck"
-  elif [ $count -eq 7 ]
-  then
-    echo "good luck"
-  else
-    echo "Holberton School"
-  fi
-  (( count++ ))
+	if [ $str_count -eq 4 ]
+	then 
+		echo "bad luck"
+	elif [ $str_count -eq 8 ]
+	then
+		echo "good luck"
+	else
+		echo "Best School"
+	fi
+	((str_count++))
 done
