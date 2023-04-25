@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+# Check if Apache is already running
+if pgrep apache2 > /dev/null; then
+    echo "Apache is already running"
+    exit 0
+fi
+
+# Add ServerName to Apache config
+echo "ServerName localhost" >> /etc/apache2/apache2.conf
+
+# Start Apache service
+if systemctl start apache2; then
+    echo "Apache started successfully"
+else
+    echo "Failed to start Apache"
+fi
