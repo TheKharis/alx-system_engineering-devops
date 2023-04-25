@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+# Update package lists
+apt-get update
+
+# Install nginx and automatically answer yes to any prompts
+apt-get install -y nginx
+
+# Configure nginx
+ufw allow 'Nginx HTTP'
+echo 'Hello World!' > /var/www/html.nginx-debian.html
+
+# Restart nginx
+service nginx start
